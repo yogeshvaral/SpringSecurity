@@ -18,6 +18,8 @@
 <form:errors path="name" cssStyle="color:red"></form:errors></td></tr>
 <tr><td> Email : <form:input path="email"/>
 <form:errors path="email" cssStyle="color:red"></form:errors></td></tr>
+<tr><td> Password : <form:input path="password"/>
+
 <tr><td><input type="submit" value="submit"></td></tr>
 </form:form>
 </table>

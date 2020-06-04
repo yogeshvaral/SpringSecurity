@@ -8,14 +8,8 @@
 
 	<security:authentication-manager>
 		<security:authentication-provider>
-			<security:user-service>
-				<security:user name="yogesh" authorities="admin"
-					password="$2a$10$S67GUZ6vOHiahkyV/vaUU.a9r27KVgy8qhZjqb8Lpq/XoeH85xpOu" />
-				<security:user authorities="admin" name="kaminee"
-					password="kaminee" />
-			</security:user-service>
-
-			<security:password-encoder ref="encoder" hash="bcrypt" />
+			<security:jdbc-user-service data-source-ref="dataSource" />
+			<security:password-encoder ref="encoder" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 	<security:http use-expressions="true">
@@ -27,7 +21,8 @@
 			<security:form-login login-page="/login"
 				authentication-failure-url="/login?error" />
 	</security:http>
-	<bean id="encoder"
+	
+		<bean id="encoder"
 		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
   </bean>
 </beans>
