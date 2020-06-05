@@ -22,6 +22,16 @@
 
 <tr><td><input type="submit" value="submit"></td></tr>
 </form:form>
+
+<tr>
+<td>
+<c:url var="logoutUrl" value="/logout"/>
+<form action="${logoutUrl}" method="post">
+<input type="submit" value="Logout"/>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+</form>
+</td>
+</tr>
 </table>
 </body>
 </html>
