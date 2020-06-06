@@ -24,6 +24,8 @@
 			access="hasRole('ADMIN')" />
 		<security:intercept-url pattern="/files/**"
 			access="permitAll" />
+		<security:intercept-url pattern="/403"
+			access="permitAll" />
 		<security:intercept-url pattern="/login	"
 			access="permitAll" />
 		<security:intercept-url pattern="/addUser"
@@ -37,6 +39,8 @@
 			data-source-ref="dataSource" />
 		<security:logout invalidate-session="true"
 			logout-success-url="/logout" logout-url="/logout" />
+		<security:access-denied-handler
+			error-page="/403" />
 	</security:http>
 
 	<bean id="encoder"
