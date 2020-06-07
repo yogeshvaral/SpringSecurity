@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.security.access.annotation.Secured;
 import org.studyeasy.spring.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -69,6 +70,7 @@ public class AppController {
 		ModelAndView model = new ModelAndView("logout");
 		return model;
 	}
+	@Secured("ROLE_ADMIN")
 	@RequestMapping("/admin")
 	public ModelAndView admin() {
 		ModelAndView model = new ModelAndView("admin");
